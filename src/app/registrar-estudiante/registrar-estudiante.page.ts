@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
-import { AlertController } from '@ionic/angular';
+import { ToastController, LoadingController,AlertController } from '@ionic/angular';
 import { AuthService } from '../services/auth.service';
 
 @Component({
@@ -12,12 +12,17 @@ import { AuthService } from '../services/auth.service';
 export class RegistrarEstudiantePage implements OnInit {
 
   imgURL;
+
+  public nombre: string;
+  public email: string;
+  public password: string;
   
   constructor(
     private camera: Camera,
     private authService:AuthService,
     private router:Router,
-    private alertCtrl:AlertController
+    private alertCtrl:AlertController,
+    private toastCtrl: ToastController,
   ) { }
 
   getCamera(){
@@ -43,10 +48,11 @@ export class RegistrarEstudiantePage implements OnInit {
   }
 
   async signUp(form):Promise<void>{
-    this.authService.signUpUser(form.value.email, form.value.password).
+    this.authService.signUpUser(form.value.nombre,form.value.email, form.value.password).
     then(
       ()=>{
-        this.router.navigateByUrl('home');
+        this.router.navigateByUrl('/tabs/tab2/index-admin');
+        this.presentToast('Usuario registrado');
       },
       async error =>{
         const alert = await this.alertCtrl.create({
@@ -56,6 +62,15 @@ export class RegistrarEstudiantePage implements OnInit {
         await alert.present();
       }
     );
+  }
+
+  async presentToast(a){
+    const toast = await this.toastCtrl.create({
+      message: a,
+       duration: 1500,
+       position: 'top'
+    });
+    toast.present();
   }
 
   ngOnInit() {

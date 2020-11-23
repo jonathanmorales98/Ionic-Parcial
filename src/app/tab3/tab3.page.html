@@ -1,12 +1,20 @@
 <ion-split-pane contentId="third-content" [disabled]="!paneEnabled">
   <ion-menu contentId="third-content" menuId="third">
-    <ion-header class="menu-header">
+    <!--<ion-header class="menu-header">
       <ion-toolbar color="primary">
         <ion-title>Menu Estudiante</ion-title>
       </ion-toolbar>
-    </ion-header>
+    </ion-header>-->
 
     <ion-content>
+      <div class="menu-header"></div>
+      <div class="header-content">
+        <img src="" alt="">
+        <ion-label>
+          <h2>Menu</h2>
+          <p>Bienvenido estudiante</p>
+        </ion-label>
+      </div>
       <ion-list>
         <ion-menu-toggle auto-hide="false" menu="third">
           <ion-item routerLink="/tabs/tab3/index-estudiante" routerDireccion="root" routerLinkActive="active-item">

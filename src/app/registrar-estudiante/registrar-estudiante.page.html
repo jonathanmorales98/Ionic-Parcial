@@ -10,18 +10,53 @@
 <ion-content>
   <div class="container">
     <ion-card>
-    <img src="{{imgURL}}" height="200" width="200">
+      <b><ion-label id="txt-foto">Fotografia: </ion-label></b>
+      <br>
+      <br>
+    <img src="{{imgURL}}" height="80" width="80">
+    <ion-button id="btn-camera" size="small" (click)="getCamera()">Camara</ion-button>
+    <ion-button id="btn-camera" size="small" (click)="getGallery()">Galeria</ion-button>
     <ion-card>
-    <ion-button (click)="getCamera()">From Camera</ion-button>
-    <ion-button (click)="getGallery()">From Gallery</ion-button>
   </ion-card>
   </ion-card>
   </div>
 
   <form #form="ngForm" (ngSubmit)="signUp(form)">
     <div>
+
       <ion-item>
-        <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+        <ion-input name="nombre" type="text" placeholder="Nombre del estudiante" ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input placeholder="Edad del estudiante" type="number"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-select interface="popover" placeholder="Genero">
+          <ion-select-option value="Masculino">Masculino</ion-select-option>
+          <ion-select-option value="Femenino">Femenino</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-select interface="popover" placeholder="Carrera">
+          <ion-select-option value="cineytv">Cine y television</ion-select-option>
+          <ion-select-option value="industrial">Ing. Industrial</ion-select-option>
+          <ion-select-option value="desarrollo">Desarrollo de software</ion-select-option>
+          <ion-select-option value="teleco">Ing. Telecomunicacion</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-select interface="popover" placeholder="Jornada">
+          <ion-select-option value="diurna">Diurna</ion-select-option>
+          <ion-select-option value="nocturna">Nocturna</ion-select-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="email" type="email" placeholder="nombre@email.com" ngModel required></ion-input>
       </ion-item>
 
       <ion-item>

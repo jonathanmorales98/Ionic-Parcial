@@ -1,9 +1,53 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>consultar-estudiante</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="third"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Consultar estudiante</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <form>
+    <div>
+      <ion-label id="txt" >Bienvenido </ion-label>
+
+      <form>
+
+          <ion-item>
+            <ion-label>Nombre:</ion-label>
+            <ion-input [disabled]="true" ></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label>Edad:</ion-label>
+            <ion-input [disabled]="true" ></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label>Genero:</ion-label>
+            <ion-input [disabled]="true" ></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label>Carrera:</ion-label>
+            <ion-input [disabled]="true" ></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label>Jornada:</ion-label>
+            <ion-input [disabled]="true" ></ion-input>
+          </ion-item>
+    
+          <ion-item>
+            <ion-label>Correo:</ion-label>
+            <ion-input [disabled]="true" ></ion-input>
+          </ion-item>
+    
+      </form>
+
+    </div>
+  </form>
 
 </ion-content>

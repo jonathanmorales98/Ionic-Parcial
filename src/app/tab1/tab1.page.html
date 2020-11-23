@@ -1,12 +1,20 @@
 <ion-split-pane contentId="content" [disabled]="!paneEnabled">
   <ion-menu contentId="content" menuId="first">
-    <ion-header class="menu-header">
+    <!--<ion-header class="menu-header">
       <ion-toolbar>
         <ion-title class="titulo-menu">Menu Principal</ion-title>
       </ion-toolbar>
-    </ion-header>
+    </ion-header>-->
 
     <ion-content>
+      <div class="menu-header"></div>
+      <div class="header-content">
+        <img src="" alt="">
+        <ion-label>
+          <h2>Menu</h2>
+          <p>Bienvenidos</p>
+        </ion-label>
+      </div>
       <ion-list>
         <ion-menu-toggle auto-hide="false" menu="first">
           <ion-item routerLink="/tabs/tab1/home" routerDireccion="root" routerLinkActive="active-item">

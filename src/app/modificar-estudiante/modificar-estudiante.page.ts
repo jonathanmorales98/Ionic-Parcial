@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./modificar-estudiante.page.scss'],
 })
 export class ModificarEstudiantePage implements OnInit {
+  
 
   constructor() { }
 

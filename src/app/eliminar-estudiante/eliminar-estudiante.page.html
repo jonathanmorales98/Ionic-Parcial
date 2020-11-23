@@ -1,9 +1,37 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>eliminar-estudiante</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="second"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Eliminar estudiante</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+  <form>
+    <div>
+      <ion-label id="title-buscar">Buscar estudiante:</ion-label>
+      <ion-item>
+        <ion-input name="nombre" type="text" placeholder="Nombre del estudiante"></ion-input>
+      </ion-item>
+      <ion-button id="btn-consultar" size="small">Consultar</ion-button>
+      <br>
+      <br>
+
+ 
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input [disabled]="true" ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Correo:</ion-label>
+        <ion-input [disabled]="true" ></ion-input>
+      </ion-item>
+
+      <ion-button id="btn-guardar">Eliminar</ion-button>
+
+    </div>
+  </form>
 
 </ion-content>

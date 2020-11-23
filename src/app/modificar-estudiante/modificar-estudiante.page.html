@@ -1,9 +1,65 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>modificar-estudiante</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="second"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Modificar estudiante</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
+
+  <form>
+    <div>
+      <ion-label id="title-buscar">Buscar estudiante:</ion-label>
+      <ion-item>
+        <ion-input name="nombre" type="text" placeholder="Nombre del estudiante"></ion-input>
+      </ion-item>
+      <ion-button id="btn-consultar" size="small">Consultar</ion-button>
+      <br>
+      <br>
+
+ 
+      <ion-item>
+        <ion-label>Nombre:</ion-label>
+        <ion-input [disabled]="true" ></ion-input>
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Edad:</ion-label>
+        <ion-input [disabled]="true" ></ion-input>
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Genero:</ion-label>
+        <ion-input [disabled]="true" ></ion-input>
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Carrera:</ion-label>
+        <ion-input [disabled]="true" ></ion-input>
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Jornada:</ion-label>
+        <ion-input [disabled]="true" ></ion-input>
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-label>Correo:</ion-label>
+        <ion-input [disabled]="true" ></ion-input>
+        <ion-icon name="create-outline"></ion-icon>
+      </ion-item>
+
+      <ion-button id="btn-guardar">Guardar</ion-button>
+
+    </div>
+  </form>
+
 
 </ion-content>

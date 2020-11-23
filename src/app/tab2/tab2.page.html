@@ -1,12 +1,21 @@
 <ion-split-pane contentId="second-content" [disabled]="!paneEnabled">
   <ion-menu contentId="second-content" menuId="second">
+    <!--
     <ion-header class="menu-header">
       <ion-toolbar color="primary">
         <ion-title>Menu Administrador</ion-title>
       </ion-toolbar>
-    </ion-header>
+    </ion-header>-->
 
     <ion-content>
+      <div class="menu-header"></div>
+      <div class="header-content">
+        <img src="" alt="">
+        <ion-label>
+          <h2>Menu</h2>
+          <p>Bienvenido Administrador</p>
+        </ion-label>
+      </div>
       <ion-list>
         <ion-menu-toggle auto-hide="false" menu="second">
           <ion-item routerLink="/tabs/tab2/index-admin" routerDireccion="root" routerLinkActive="active-item">
