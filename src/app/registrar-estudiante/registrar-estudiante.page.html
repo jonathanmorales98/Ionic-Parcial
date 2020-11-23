@@ -17,4 +17,20 @@
   </ion-card>
   </ion-card>
   </div>
+
+  <form #form="ngForm" (ngSubmit)="signUp(form)">
+    <div>
+      <ion-item>
+        <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-input name="password" type="password" placeholder="password" ngModel required></ion-input>
+      </ion-item>
+    </div>
+
+    <div style="text-align: center;margin: auto;">
+      <ion-button type="submit" [disabled]="form.invalid">Sign Up</ion-button>
+    </div>
+  </form>
 </ion-content>

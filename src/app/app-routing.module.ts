@@ -29,7 +29,11 @@ const routes: Routes = [
   {
     path: 'consultar-estudiante',
     loadChildren: () => import('./consultar-estudiante/consultar-estudiante.module').then( m => m.ConsultarEstudiantePageModule)
+  },  {
+    path: 'recuperar-password',
+    loadChildren: () => import('./recuperar-password/recuperar-password.module').then( m => m.RecuperarPasswordPageModule)
   }
+
 ];
 @NgModule({
   imports: [

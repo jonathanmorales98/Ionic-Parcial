@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Camera, CameraOptions } from '@ionic-native/camera/ngx';
+import { AlertController } from '@ionic/angular';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-registrar-estudiante',
@@ -11,7 +14,10 @@ export class RegistrarEstudiantePage implements OnInit {
   imgURL;
   
   constructor(
-    private camera: Camera
+    private camera: Camera,
+    private authService:AuthService,
+    private router:Router,
+    private alertCtrl:AlertController
   ) { }
 
   getCamera(){
@@ -34,6 +40,22 @@ export class RegistrarEstudiantePage implements OnInit {
     }).catch(e=>{
       console.log(e);
     })
+  }
+
+  async signUp(form):Promise<void>{
+    this.authService.signUpUser(form.value.email, form.value.password).
+    then(
+      ()=>{
+        this.router.navigateByUrl('home');
+      },
+      async error =>{
+        const alert = await this.alertCtrl.create({
+          message:error.message,
+          buttons:[{text:'ok',role:'cancel'}],
+        });
+        await alert.present();
+      }
+    );
   }
 
   ngOnInit() {

@@ -1,9 +1,3 @@
-<ion-header>
-  <ion-toolbar>
-    <ion-title>Ingresar como Administrador</ion-title>
-  </ion-toolbar>
-</ion-header>
-
 <ion-content>
 
   <div class="header">
@@ -16,21 +10,24 @@
   </div>
   <ion-title class="title">Iniciar sesión</ion-title>
   
-  <ion-item class="input1">
-    <ion-label position="floating">Usuario</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+  <form #form="ngForm" (ngSubmit)="loginUser(form)">
 
-  <ion-item class="input">
-    <ion-label position="floating">Contraseña</ion-label>
-    <ion-input></ion-input>
-  </ion-item>
+    <ion-item class="input1">
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input name="email" type="email" placeholder="your@email.com" ngModel required></ion-input>
+    </ion-item>
 
-  <div id="olvido">
-    <ion-label>¿Olvidó su contraseña?</ion-label><a> Toca Aquí</a>
-  </div>
+    <ion-item class="input">
+      <ion-label position="floating">Contraseña</ion-label>
+      <ion-input name="password" type="password" placeholder="password" ngModel required></ion-input>
+    </ion-item>
 
-  <div class="btn-login">
-    <ion-button expand="block" routerLink="/tabs/tab2/index-admin">Iniciar sesión</ion-button>
+    <div class="btn-login" style="text-align: center;margin: auto;">
+      <ion-button type="submit" [disabled]="form.invalid">Iniciar sesión</ion-button>
+    </div>
+  </form>
+
+  <div id="olvido" style="text-align: center;margin: auto;">
+    <h6 (click)="goToReset()">Olvidé la contraseña</h6>
   </div>
 </ion-content>
