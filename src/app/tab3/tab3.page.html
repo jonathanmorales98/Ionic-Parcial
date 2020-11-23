@@ -1,0 +1,32 @@
+<ion-split-pane contentId="third-content" [disabled]="!paneEnabled">
+  <ion-menu contentId="third-content" menuId="third">
+    <ion-header>
+      <ion-toolbar color="primary">
+        <ion-title>Menu Estudiante</ion-title>
+      </ion-toolbar>
+    </ion-header>
+
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle auto-hide="false" menu="third">
+          <ion-item routerLink="/tabs/tab3/index-estudiante" routerDireccion="root" routerLinkActive="active-item">
+            <ion-label>
+              Inicio Estudiante
+            </ion-label>
+          </ion-item>
+          <ion-item routerLink="/tabs/tab3/consultar-estudiante" routerDireccion="root" routerLinkActive="active-item">
+            <ion-label>
+              Consultar datos
+            </ion-label>
+          </ion-item>
+          <ion-item routerLink="/tabs/tab1/home" routerDireccion="root" routerLinkActive="active-item">
+            <ion-label>
+              Cerrar sesion y salir
+            </ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="third-content"></ion-router-outlet>
+</ion-split-pane>

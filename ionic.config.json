@@ -1,0 +1,7 @@
+{
+  "name": "Parcial",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
